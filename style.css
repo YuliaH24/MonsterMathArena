@@ -1,0 +1,81 @@
+*{box-sizing:border-box}
+body{
+  margin:0;min-height:100vh;
+  font-family:Arial,Helvetica,sans-serif;
+  color:#f5f7fb;
+  background:
+    radial-gradient(circle at 50% 20%,#3b3447 0,#171a25 38%,#090b11 100%);
+}
+button{font:inherit}
+.game{width:min(1000px,94%);margin:24px auto}
+.header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.title{font-size:clamp(24px,5vw,42px);font-weight:900}
+.subtitle{color:#aeb6c6;margin-top:4px}
+.badge{padding:9px 14px;border:1px solid #4a5365;border-radius:999px;background:#1c2230}
+.arena{
+  margin-top:18px;padding:22px;border:1px solid #41495a;border-radius:24px;
+  background:linear-gradient(#171b29,#22232c 58%,#332b25);
+  box-shadow:0 20px 60px #0008;
+}
+.scores{display:grid;grid-template-columns:1fr auto 1fr;gap:14px;align-items:center}
+.team{padding:15px;border-radius:16px;background:#181d29;border:1px solid #3d4657}
+.team.right{text-align:right}
+.team-name{font-weight:900}
+.score{font-size:36px;font-weight:900;margin-top:4px}
+.hp{height:9px;background:#353c4b;border-radius:99px;overflow:hidden;margin-top:8px}
+.hp span{display:block;height:100%;transition:width .35s}
+.red{background:#ef4444}.green{background:#22c55e}
+.vs{font-weight:900;color:#c8ceda;font-size:20px}
+.fighters{
+  min-height:245px;display:grid;grid-template-columns:1fr 170px 1fr;
+  align-items:end;gap:15px
+}
+.monster{text-align:center;font-size:110px;filter:drop-shadow(0 15px 8px #0008)}
+.left{transform:scaleX(-1)}
+.monster.hit{animation:hit .35s}
+.platform{
+  height:100px;border-radius:50% 50% 35% 35%;
+  background:radial-gradient(circle,#737b88,#333946 60%,#171b24);
+  border:3px solid #777f8e;
+  box-shadow:0 15px 25px #0008 inset,0 8px 20px #0007;
+}
+.question{
+  text-align:center;padding:20px;border-radius:18px;
+  background:#0d111aee;border:1px solid #424a5b
+}
+.round-label{color:#aeb6c6;font-size:14px}
+.question-text{font-size:clamp(34px,7vw,58px);font-weight:950;margin-top:5px}
+.answers{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:14px}
+.answer{
+  min-height:65px;border:1px solid #454e60;border-radius:15px;
+  background:#202634;color:#fff;font-size:24px;font-weight:900;cursor:pointer;
+  transition:.15s
+}
+.answer:hover:not(:disabled){transform:translateY(-2px);border-color:#a78bfa;background:#292f40}
+.answer:disabled{cursor:default}
+.answer.correct{background:#14532d;border-color:#22c55e}
+.answer.wrong{background:#641e2a;border-color:#ef4444}
+.status{text-align:center;min-height:30px;margin:15px 0;font-weight:800}
+.controls{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
+.btn{
+  border:1px solid #4b5567;border-radius:12px;padding:12px 20px;
+  background:#202634;color:#fff;font-weight:900;cursor:pointer
+}
+.btn.primary{background:#ddd6fe;color:#171323;border-color:#c4b5fd}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.instructions{
+  margin-top:16px;padding:14px;border-radius:14px;background:#151a25;
+  border:1px solid #363e4e;color:#c3cad7;line-height:1.5
+}
+.instructions strong{color:#fff}
+@keyframes hit{
+  0%{transform:scale(1)}40%{transform:scale(.8) rotate(-7deg)}100%{transform:scale(1)}
+}
+@media(max-width:650px){
+ .scores{grid-template-columns:1fr 45px 1fr}
+ .fighters{grid-template-columns:1fr 80px 1fr;min-height:170px}
+ .monster{font-size:70px}
+ .answers{grid-template-columns:repeat(2,1fr)}
+ .question-text{font-size:38px}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}

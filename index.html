@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Monster Math Arena</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="game">
+  <header class="header">
+    <div>
+      <div class="title">⚔️ Monster Math Arena</div>
+      <div class="subtitle">Pertarungan matematika — siapa paling cepat?</div>
+    </div>
+    <div class="badge" id="round">Ronde 1 / 11</div>
+  </header>
+
+  <section class="arena">
+    <div class="scores">
+      <div class="team">
+        <div class="team-name">🔴 API INFERNO</div>
+        <div class="score" id="scoreA">0</div>
+        <div class="hp"><span class="red" id="hpA"></span></div>
+      </div>
+      <div class="vs">VS</div>
+      <div class="team right">
+        <div class="team-name">🟢 HUTAN LIAR</div>
+        <div class="score" id="scoreB">0</div>
+        <div class="hp"><span class="green" id="hpB"></span></div>
+      </div>
+    </div>
+
+    <div class="fighters">
+      <div class="monster left" id="monsterA">👹</div>
+      <div class="platform"></div>
+      <div class="monster" id="monsterB">👾</div>
+    </div>
+
+    <div class="question">
+      <div class="round-label">SOAL BERSAMA</div>
+      <div class="question-text" id="question">3 × 4 = ?</div>
+    </div>
+
+    <div class="answers" id="answers"></div>
+    <div class="status" id="status" aria-live="polite">
+      ⚡ Rebutan! Pilih jawaban secepat mungkin.
+    </div>
+
+    <div class="controls">
+      <button class="btn primary" id="next" disabled>Soal Berikutnya ▶</button>
+      <button class="btn" id="restart">↻ Mulai Ulang</button>
+    </div>
+
+    <div class="instructions">
+      <strong>Cara bermain:</strong> setiap ronde kedua kelompok mendapat soal yang sama.
+      Pilih jawaban yang benar. Jawaban tercepat dan tepat mendapat <strong>10 poin</strong>.
+      Ada 11 soal. Soal utama adalah perkalian 3–9, dengan beberapa pilihan pengecoh berupa penjumlahan.
+    </div>
+  </section>
+</main>
+
+<script src="script.js"></script>
+</html>
